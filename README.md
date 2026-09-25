@@ -59,7 +59,6 @@ Mit **Strg + Umschalt + L** öffnest du das Diagnoseprotokoll. Bei einem Fehlerb
 - Kurze Beschreibung und Schritte zum Nachstellen
 - Screenshot oder relevanter Diagnoseauszug
 
-Bitte entferne Zugangsdaten, Webhook-Adressen und persönliche Informationen vor der Veröffentlichung.
 
 [Fehler melden oder Verbesserung vorschlagen](https://github.com/Vardokr/nexus-hub-releases/issues)
 
