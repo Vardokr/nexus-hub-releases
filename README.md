@@ -1,4 +1,4 @@
-# NEXUS HUB
+# NEXUS WOT ClAN HUB
 
 NEXUS HUB ist eine Windows-Anwendung zur Verwaltung und Organisation von World-of-Tanks-Clans. Mitgliederverwaltung, Recruiting und Einsatzplanung kommen in einer gemeinsamen Oberfläche zusammen.
 
