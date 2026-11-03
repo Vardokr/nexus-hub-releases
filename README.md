@@ -1,4 +1,26 @@
-# NEXUS WOT CLAN HUB
+<p align="center">
+  <img src="docs/assets/logo-512.png" alt="NEXUS HUB" width="140">
+</p>
+
+<h1 align="center">NEXUS HUB</h1>
+
+<p align="center">
+  <b>Dein Clan. Eine Zentrale.</b><br>
+  Das Clan Operations Center für World of Tanks
+</p>
+
+<p align="center">
+  <a href="https://github.com/Vardokr/nexus-hub-releases/releases/latest"><b>Download</b></a> ·
+  <a href="#ersteinrichtung">Ersteinrichtung</a> ·
+  <a href="https://github.com/Vardokr/nexus-hub-releases/issues">Fehler melden</a>
+</p>
+
+<p align="center">
+  <img src="docs/assets/dashboard.webp" alt="Dashboard von NEXUS HUB" width="900"><br>
+  <sub>Beispielansicht mit Demodaten</sub>
+</p>
+
+---
 
 NEXUS HUB ist eine Windows-Anwendung zur Verwaltung und Organisation von World-of-Tanks-Clans. Mitgliederverwaltung, Recruiting und Einsatzplanung kommen in einer gemeinsamen Oberfläche zusammen.
 
