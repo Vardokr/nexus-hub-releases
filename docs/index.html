@@ -39,6 +39,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .shot img{display:block;width:100%;height:auto}
 .cap{font-size:13px;color:var(--muted);margin-top:12px}
 section{padding:84px 0}
+section[id]{scroll-margin-top:70px}
 h2{font-size:clamp(30px,4.5vw,44px);line-height:1.15;font-weight:800;letter-spacing:-.01em}
 .sub{color:var(--muted);margin-top:10px;max-width:640px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:40px}
@@ -56,13 +57,21 @@ ul.tick li:before{content:"";position:absolute;left:0;top:.5em;width:14px;height
 .band .cta{margin-top:26px}
 footer{padding:36px 0;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid var(--line)}
 footer a{color:var(--accent)}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:36px}
+.bcard{background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.bprev{border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:center;min-height:120px;
+ background:conic-gradient(#2a3a55 25%,#1f2d45 0 50%,#2a3a55 0 75%,#1f2d45 0) 0 0/20px 20px}
+.bprev img{max-width:100%;height:auto;display:block}
+.bcard .row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px;color:var(--muted)}
+.bcard .row a{font-weight:700;color:var(--accent);white-space:nowrap}
+.bcard .row a:hover{text-decoration:underline}
 @media(max-width:820px){nav{display:none}.split{grid-template-columns:1fr}.hero{padding-top:56px}section{padding:60px 0}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
  <a class="brand" href="#top"><img src="assets/logo.svg" alt="">NEXUS <span>HUB</span></a>
- <nav><a href="#funktionen">Funktionen</a><a href="#einblick">Einblick</a><a href="#start">Loslegen</a></nav>
+ <nav><a href="#funktionen">Funktionen</a><a href="#einblick">Einblick</a><a href="#banner">Banner</a><a href="#start">Loslegen</a></nav>
  <a class="btn primary js-releases" href="#">Download</a>
 </div></header>
 
@@ -115,12 +124,27 @@ footer a{color:var(--accent)}
  </div>
 </div></section>
 
+<section id="banner" style="padding-top:0"><div class="wrap">
+ <h2>Banner für Streamer &amp; Clan-Werbung</h2>
+ <p class="sub">Fertige PNGs mit transparentem Hintergrund, zum Beispiel als Bildquelle in OBS. Einfach herunterladen und über dein Gameplay legen.</p>
+ <div class="bgrid">
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-1-dunkel-clanverwaltung.png" alt="Banner dunkel" loading="lazy"></div><div class="row"><span>Dunkel · Clan-Verwaltung</span><a href="assets/banner/nexus-hub-1-dunkel-clanverwaltung.png" download>Download</a></div></div>
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-2-ohne-platte.png" alt="Banner ohne Platte" loading="lazy"></div><div class="row"><span>Ohne Platte</span><a href="assets/banner/nexus-hub-2-ohne-platte.png" download>Download</a></div></div>
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-3-blau.png" alt="Banner blau" loading="lazy"></div><div class="row"><span>Blau</span><a href="assets/banner/nexus-hub-3-blau.png" download>Download</a></div></div>
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-4-recruiting.png" alt="Banner Recruiting" loading="lazy"></div><div class="row"><span>Recruiting</span><a href="assets/banner/nexus-hub-4-recruiting.png" download>Download</a></div></div>
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-5-slogan.png" alt="Banner Slogan" loading="lazy"></div><div class="row"><span>Slogan</span><a href="assets/banner/nexus-hub-5-slogan.png" download>Download</a></div></div>
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-6-funktionen.png" alt="Banner Funktionen" loading="lazy"></div><div class="row"><span>Funktionen</span><a href="assets/banner/nexus-hub-6-funktionen.png" download>Download</a></div></div>
+  <div class="bcard"><div class="bprev"><img src="assets/banner/nexus-hub-7-lauflicht-leiste.png" alt="Leiste" loading="lazy"></div><div class="row"><span>Leiste (1920×140)</span><a href="assets/banner/nexus-hub-7-lauflicht-leiste.png" download>Download</a></div></div>
+ </div>
+</div></section>
+
 <section class="band" id="start"><div class="wrap">
  <h2>Bereit für deinen Clan?</h2>
  <p class="sub" style="margin-left:auto;margin-right:auto">Beim ersten Start führt dich ein Assistent durch Firebase, Wargaming-API und Clan-Einrichtung.</p>
  <div class="cta">
   <a class="btn primary js-releases" href="#">Jetzt herunterladen</a>
   <a class="btn ghost js-docs" href="#">Anleitung lesen</a>
+  <a class="btn ghost" href="#banner">OBS-Banner</a>
  </div>
 </div></section>
 </main>
