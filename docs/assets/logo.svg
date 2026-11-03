@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>NEXUS HUB</title>
+  <path d="M17 5H55Q60 5 59 10L50 55Q49 59 44 59H7Q2 59 3 54L12 10Q13 5 17 5Z" fill="#192840" stroke="#538bff" stroke-opacity=".45" stroke-width="1.5"/>
+  <path d="M14 49L22 15H30L37 37L42 15H50L42 49H34L27 27L22 49Z" fill="#e7efff"/>
+  <path d="M48 16H54L47 48H41Z" fill="#679aff"/>
+</svg>
