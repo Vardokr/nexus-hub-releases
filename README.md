@@ -38,7 +38,7 @@ NEXUS HUB ist eine Windows-Anwendung zur Verwaltung und Organisation von World-o
 - **Discord-Anbindung:** Benachrichtigungen über konfigurierbare Webhooks.
 - **Lokaler Cache:** Bereits geladene Daten schneller bereitstellen.
 
-Die verfügbaren Bearbeitungsfunktionen richten sich nach der bestätigten Clan-Rolle und den Datenbankberechtigungen.
+Die verfügbaren Bearbeitungsfunktionen richten sich nach der bestätigten Clan-Rolle und den Berechtigungen.
 
 ## Download & Installation
 
@@ -50,16 +50,17 @@ Dieses Repository dient der Bereitstellung von Installationsdateien und Updates.
 
 ## Ersteinrichtung
 
-Der Einrichtungsassistent führt dich durch die Konfiguration:
+Alle Clans laufen auf einem zentralen NEXUS-Server. Du brauchst keine eigene Datenbank und keine eigenen Schlüssel. Jeder Clan ist über seinen Wargaming-Clan-Tag getrennt und sieht nur seine eigenen Daten.
 
-1. Eigene Firebase-Realtime-Database verbinden.
-2. Wargaming-API-Zugang eintragen.
-3. Den gewünschten Clan auswählen.
-4. Optional Discord-Webhooks hinterlegen.
+Der Einrichtungsassistent fragt, was du bist:
 
-Jeder Clan verwendet seine eigene Firebase-Instanz. Es besteht keine automatische Verbindung zur Datenbank eines anderen Clans.
+1. **Ich leite den Clan** (Kommandant oder Stellvertreter): Mit Wargaming anmelden. Der Clan wird einmalig aktiviert, danach zeigt dir NEXUS HUB deinen **Clan-Code** im Format `XXXX-XXXX-XXXX`. Gib ihn an deine Mitglieder weiter.
+2. **Ich bin Mitglied:** Clan-Code eintragen und mit Wargaming anmelden.
+3. **Ich war schon dabei:** Deine vorhandenen Daten bleiben erhalten.
 
-Die Firebase-Zugriffsregeln müssen passend eingerichtet werden; die Einrichtung der App ersetzt diese Absicherung nicht.
+Optional kannst du Discord-Webhooks hinterlegen.
+
+Der Server prüft bei jeder Anfrage, ob dein Wargaming-Account zum Clan gehört. Die Clan-Leitung kann unter **Einstellungen → Datenbank** jederzeit einen neuen Clan-Code erzeugen und die Verbindung testen.
 
 ## Updates
 
