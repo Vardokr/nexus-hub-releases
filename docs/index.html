@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NEXUS HUB – Clan Operations Center für World of Tanks</title>
-<meta name="description" content="NEXUS HUB ist die Windows-App für World-of-Tanks-Clans: Mitgliederverwaltung, Recruiting und Einsatzplanung in einer Oberfläche.">
-<meta property="og:title" content="NEXUS HUB – Clan Operations Center">
+<title>NEXUS WOT CLAN HUB – Clan Operations Center für World of Tanks</title>
+<meta name="description" content="NEXUS WOT CLAN HUB ist die Windows-App für World-of-Tanks-Clans: Mitgliederverwaltung, Recruiting und Einsatzplanung in einer Oberfläche, ohne eigene Datenbank.">
+<meta property="og:title" content="NEXUS WOT CLAN HUB – Clan Operations Center">
 <meta property="og:description" content="Mitglieder, Recruiting und Einsatzplanung für World of Tanks – an einem Ort.">
 <meta property="og:image" content="assets/logo-512.png">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -20,6 +20,8 @@ header{position:sticky;top:0;z-index:10;background:rgba(10,18,32,.85);backdrop-f
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2em}
 .brand img{width:36px;height:36px}.brand span{color:var(--accent)}
+.brand{white-space:nowrap}
+@media(max-width:560px){.brand span{display:none}}
 nav{display:flex;gap:26px;font-size:15px;color:var(--muted)}
 nav a:hover{color:var(--text)}
 .btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:700;border:2px solid var(--accent);transition:.15s}
@@ -65,13 +67,19 @@ footer a{color:var(--accent)}
 .bcard .row{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:15px;color:var(--muted)}
 .bcard .row a{font-weight:700;color:var(--accent);white-space:nowrap}
 .bcard .row a:hover{text-decoration:underline}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:40px;counter-reset:step}
+.step{background:linear-gradient(160deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:26px}
+.step:before{counter-increment:step;content:counter(step);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:linear-gradient(100deg,var(--accent2),#2f5fd0);color:#fff;font-weight:800;margin-bottom:14px}
+.step h3{font-size:20px;margin-bottom:8px}.step p{color:var(--muted);font-size:16px}
+.step code{font-family:Consolas,monospace;color:var(--text);background:rgba(103,154,255,.14);padding:1px 6px;border-radius:6px;white-space:nowrap}
+.note{color:var(--muted);margin-top:26px;max-width:760px}
 @media(max-width:820px){nav{display:none}.split{grid-template-columns:1fr}.hero{padding-top:56px}section{padding:60px 0}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
- <a class="brand" href="#top"><img src="assets/logo.svg" alt="">NEXUS <span>HUB</span></a>
- <nav><a href="#funktionen">Funktionen</a><a href="#einblick">Einblick</a><a href="#banner">Banner</a><a href="#start">Loslegen</a></nav>
+ <a class="brand" href="#top"><img src="assets/logo.svg" alt="">NEXUS <span>WOT CLAN HUB</span></a>
+ <nav><a href="#funktionen">Funktionen</a><a href="#einblick">Einblick</a><a href="#loslegen">So geht's los</a><a href="#banner">Banner</a></nav>
  <a class="btn primary js-releases" href="#">Download</a>
 </div></header>
 
@@ -79,13 +87,13 @@ footer a{color:var(--accent)}
 <div class="hero"><div class="wrap">
  <span class="eyebrow">CLAN OPERATIONS CENTER · WORLD OF TANKS</span>
  <h1>Dein Clan.<br><em>Eine Zentrale.</em></h1>
- <p class="lead">Mitgliederverwaltung, Recruiting und Einsatzplanung für World-of-Tanks-Clans – übersichtlich in einer Windows-App.</p>
+ <p class="lead">Mitgliederverwaltung, Recruiting und Einsatzplanung für World-of-Tanks-Clans – übersichtlich in einer Windows-App. Ohne eigene Datenbank: Anmelden mit Wargaming genügt.</p>
  <div class="cta">
   <a class="btn primary js-releases" href="#">Aktuelle Version herunterladen</a>
   <a class="btn ghost js-repo" href="#">Auf GitHub ansehen</a>
  </div>
- <p class="ver">Windows · Installer und portable EXE · Version 2.3.0</p>
- <div class="shot"><img src="assets/dashboard.webp" alt="Dashboard von NEXUS HUB mit Mitgliederzahl, Aktivität und Recruiting" width="1440" height="900"></div>
+ <p class="ver">Windows · Installer mit automatischen Updates · <span class="js-version">Version 2.5</span></p>
+ <div class="shot"><img src="assets/dashboard.webp" alt="Dashboard von NEXUS WOT CLAN HUB mit Mitgliederzahl, Aktivität und Recruiting" width="1440" height="900"></div>
  <p class="cap">Beispielansicht mit Demodaten</p>
 </div></div>
 
@@ -96,9 +104,11 @@ footer a{color:var(--accent)}
   <div class="card"><span class="tag">CLAN-VERWALTUNG</span><h3>Mitglieder</h3><p>Behalte Aktivität, Wertung und Dienstgrade im Blick. Mitglieder lassen sich per Wargaming-API laden und als Liste oder Kacheln anzeigen.</p></div>
   <div class="card"><span class="tag">SCOUTING &amp; RECRUITING</span><h3>Recruiting</h3><p>Begleite Bewerber vom ersten Kontakt bis zur Aufnahme – als Liste oder Board, mit Spielersuche und Talent Scout.</p></div>
   <div class="card"><span class="tag">GEMEINSAM PLANEN</span><h3>Einsatzplanung</h3><p>Clan-Kalender für Training, Bollwerk, Clan-Events und Meetings sowie Manöver, Turniere und Kampagnen.</p></div>
-  <div class="card"><span class="tag">FÜHRUNG</span><h3>Offiziers-Aufgaben</h3><p>Verteile Aufgaben im Offizierskorps und steuere über Berechtigungen, wer im Clan was sehen und ändern darf.</p></div>
+  <div class="card"><span class="tag">FÜHRUNG</span><h3>Offiziers-Aufgaben &amp; Ankündigungen</h3><p>Verteile Aufgaben im Offizierskorps und informiere den Clan mit Ankündigungen – mit Windows-Benachrichtigung, sobald etwas Neues ansteht.</p></div>
   <div class="card"><span class="tag">AUSBILDUNG</span><h3>Dienstgrade &amp; Ausbildung</h3><p>Dienstgrade und Ausbildungsstand deiner Mitglieder sauber an einem Ort.</p></div>
   <div class="card"><span class="tag">AKTIVITÄT</span><h3>Inaktivitäts-Manager</h3><p>Erkenne früh, wer länger nicht gespielt hat, und halte den Clan aktiv.</p></div>
+  <div class="card"><span class="tag">BEOBACHTEN</span><h3>Clan-Wächter</h3><p>Behalte andere Clans im Blick: Austritte und Beitritte werden erfasst – ideal für gezieltes Recruiting.</p></div>
+  <div class="card"><span class="tag">SICHER &amp; ZENTRAL</span><h3>NEXUS-Server</h3><p>Alle Daten liegen auf dem zentralen Server, jeder Clan sieht nur seine eigenen. Änderungen erscheinen sofort bei allen, und nichts geht verloren: Frühere Stände bleiben 30 Tage wiederherstellbar.</p></div>
  </div>
 </div></section>
 
@@ -112,16 +122,28 @@ footer a{color:var(--accent)}
    <li>Optionale Anbindung an einen Kalender-Webhook</li>
   </ul>
  </div>
- <div class="shot"><img src="assets/kalender.webp" alt="Clan-Kalender in NEXUS HUB" width="1440" height="900" loading="lazy"></div>
+ <div class="shot"><img src="assets/kalender.webp" alt="Clan-Kalender in NEXUS WOT CLAN HUB" width="1440" height="900" loading="lazy"></div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
  <h2>Weitere Module</h2>
  <div class="chips">
   <span class="chip">Statistiken</span><span class="chip">Appellplatz</span><span class="chip">Meet</span>
+  <span class="chip">Probezeit</span><span class="chip">Tank Intel</span><span class="chip">Anforderungen</span><span class="chip">Änderungsverlauf</span>
   <span class="chip">Manöver</span><span class="chip">Turniere &amp; Kampagnen</span><span class="chip">Teams</span>
   <span class="chip">Bollwerk</span><span class="chip">Spieler Suche</span><span class="chip">Talent Scout</span>
  </div>
+</div></section>
+
+<section id="loslegen" style="padding-top:0"><div class="wrap">
+ <h2>So geht's los</h2>
+ <p class="sub">Keine eigene Datenbank, keine Schlüssel. Ein Assistent führt beim ersten Start durch die Einrichtung.</p>
+ <div class="steps">
+  <div class="step"><h3>Installieren</h3><p>Setup herunterladen und installieren. Neue Versionen kommen danach automatisch als Update.</p></div>
+  <div class="step"><h3>Clan aktivieren</h3><p>Kommandant oder Stellvertreter wählt „Ich leite den Clan“, meldet sich mit Wargaming an und erhält den Clan-Code <code>XXXX-XXXX-XXXX</code>.</p></div>
+  <div class="step"><h3>Mitglieder treten bei</h3><p>Mitglieder wählen „Ich bin Mitglied“, geben den Clan-Code ein und melden sich mit Wargaming an. Fertig.</p></div>
+ </div>
+ <p class="note">Schon mit Version 2.4 oder älter unterwegs? Die App kommt als normales Update. Zuerst aktiviert die Clan-Leitung den Clan, danach treten die Mitglieder bei.</p>
 </div></section>
 
 <section id="banner" style="padding-top:0"><div class="wrap">
@@ -140,7 +162,7 @@ footer a{color:var(--accent)}
 
 <section class="band" id="start"><div class="wrap">
  <h2>Bereit für deinen Clan?</h2>
- <p class="sub" style="margin-left:auto;margin-right:auto">Beim ersten Start führt dich ein Assistent durch Firebase, Wargaming-API und Clan-Einrichtung.</p>
+ <p class="sub" style="margin-left:auto;margin-right:auto">Herunterladen, mit Wargaming anmelden, Clan aktivieren oder mit dem Clan-Code beitreten.</p>
  <div class="cta">
   <a class="btn primary js-releases" href="#">Jetzt herunterladen</a>
   <a class="btn ghost js-docs" href="#">Anleitung lesen</a>
@@ -150,7 +172,7 @@ footer a{color:var(--accent)}
 </main>
 
 <footer><div class="wrap">
- NEXUS HUB · Fanprojekt, nicht von Wargaming.net unterstützt oder verbunden. World of Tanks ist eine Marke von Wargaming.net.
+ NEXUS WOT CLAN HUB · Fanprojekt, nicht von Wargaming.net unterstützt oder verbunden. World of Tanks ist eine Marke von Wargaming.net.
  <br><a class="js-repo" href="#">GitHub</a>
 </div></footer>
 
@@ -162,7 +184,14 @@ footer a{color:var(--accent)}
   function set(sel,url){document.querySelectorAll(sel).forEach(function(a){ if(url){a.href=url;a.target='_blank';a.rel='noopener'} })}
   set('.js-repo',repo);
   set('.js-releases',repo&&repo+'/releases/latest');
-  set('.js-docs',repo&&repo+'/blob/main/docs/ersteinrichtung.md');
+  set('.js-docs',repo&&repo+'#ersteinrichtung');
+  // Aktuelle Versionsnummer direkt von GitHub (letztes Release), damit die Seite nicht veraltet.
+  if(repo){
+    fetch('https://api.github.com/repos/'+repo.split('github.com/')[1]+'/releases/latest',{headers:{Accept:'application/vnd.github+json'}})
+      .then(function(r){return r.ok?r.json():null})
+      .then(function(r){ if(r&&r.tag_name){ var v=String(r.tag_name).replace(/^v/,'').replace(/\.0$/,''); document.querySelectorAll('.js-version').forEach(function(e){e.textContent='Version '+v}); } })
+      .catch(function(){});
+  }
 })();
 </script>
 </body>
